@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "ingreso_parqueadero")
-public class ParkingEntry {
+public class ParkingEntryEntity {
     @EmbeddedId
     private ParkingEntryPK id;
     @Column(name = "hora_ingreso")
@@ -14,11 +14,11 @@ public class ParkingEntry {
     private Date departureTime;
     @ManyToOne
     @JoinColumn(name = "id",insertable = false,updatable = false)
-    private Bill bill;
+    private BillEntity bill;
 
     @ManyToOne
     @JoinColumn( name = "id",insertable = false,updatable = false)
-    private Vehicle vehicle;
+    private VehicleEntity vehicle;
 
     public ParkingEntryPK getId() {
         return id;

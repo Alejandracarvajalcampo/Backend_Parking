@@ -5,19 +5,19 @@ import java.util.List;
 
 @Entity
 @Table (name = "vehiculo" )
-public class Vehicle {
+public class VehicleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "placa")
-    private String plate;
+    private String vehiclePlate;
     @Column(name = "tipo")
-    private String type;
+    private String vehicleType;
     @Column(name = "cilindraje")
-    private String cylinder;
+    private String vehicleCylinder;
 
     @OneToMany(mappedBy = "vehicle")
-    private List<ParkingEntry> parkingEntry;
+    private List<ParkingEntryEntity> parkingEntry;
 
     public Integer getId() {
         return id;
@@ -28,26 +28,26 @@ public class Vehicle {
     }
 
     public String getPlate() {
-        return plate;
+        return vehiclePlate;
     }
 
     public void setPlate(String plate) {
-        this.plate = plate;
+        this.vehiclePlate = plate;
     }
 
     public String getType() {
-        return type;
+        return vehicleType;
     }
 
     public void setType(String type) {
-        this.type = type;
+        this.vehicleType = type;
     }
 
     public String getCylinder() {
-        return cylinder;
+        return vehicleCylinder;
     }
 
     public void setCylinder(String cylinder) {
-        this.cylinder = cylinder;
+        this.vehicleCylinder = cylinder;
     }
 }

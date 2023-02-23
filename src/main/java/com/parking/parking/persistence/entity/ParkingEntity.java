@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "parqueadero")
-public class Parking {
+public class ParkingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -13,9 +13,9 @@ public class Parking {
     @Column(name = "capa_maxima_motos")
     private Integer maximumCapacityMotorcycles;
     @Column(name = "dispo_carros")
-    private Integer carAvailability;
+    private Integer carsAvailability;
     @Column(name = "dispo_motos")
-    private Integer motorcycleAvailability;
+    private Integer motorcyclesAvailability;
 
     public Integer getId() {
         return id;
@@ -42,18 +42,18 @@ public class Parking {
     }
 
     public Integer getCarAvailability() {
-        return carAvailability;
+        return carsAvailability;
     }
 
     public void setCarAvailability(Integer carAvailability) {
-        this.carAvailability = carAvailability;
+        this.carsAvailability = carAvailability;
     }
 
     public Integer getMotorcycleAvailability() {
-        return motorcycleAvailability;
+        return motorcyclesAvailability;
     }
 
     public void setMotorcycleAvailability(Integer motorcycleAvailability) {
-        this.motorcycleAvailability = motorcycleAvailability;
+        this.motorcyclesAvailability = motorcycleAvailability;
     }
 }

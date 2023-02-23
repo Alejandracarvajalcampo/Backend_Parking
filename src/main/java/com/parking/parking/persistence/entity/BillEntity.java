@@ -5,14 +5,14 @@ import java.util.List;
 
 @Entity
 @Table(name = "factura")
-public class Bill {
+public class BillEntity {
 
     @EmbeddedId
     private BillPK id;
     @Column(name = "valor_pago")
     private Integer amountToBePaid;
     @OneToMany(mappedBy = "bill")
-    private List<ParkingEntry> parkingEntry;
+    private List<ParkingEntryEntity> parkingEntry;
 
     public BillPK getId() {
         return id;
