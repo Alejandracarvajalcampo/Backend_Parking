@@ -12,6 +12,7 @@ public interface VehicleMapper {
     @Mappings({
             @Mapping(source = "id",target = "vehicleId"),
             @Mapping(source = "vehiclePlate",target = "plate"),
+            @Mapping(source = "vehicleType",target = "type"),
             @Mapping(source = "vehicleCylinder",target = "cylinder"),
 
     })
