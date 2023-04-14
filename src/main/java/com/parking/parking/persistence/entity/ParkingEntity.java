@@ -1,6 +1,7 @@
 package com.parking.parking.persistence.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "parqueadero")
@@ -16,6 +17,11 @@ public class ParkingEntity {
     private Integer carsAvailability;
     @Column(name = "dispo_motos")
     private Integer motorcyclesAvailability;
+
+    // Que columna en la tabla Tuition tiene la FK
+    @JoinColumn(name = "VehicleEntity_id")
+    @OneToOne(fetch = FetchType.LAZY)
+    private VehicleEntity vehicleEntity;
 
     public Integer getId() {
         return id;
@@ -41,19 +47,27 @@ public class ParkingEntity {
         this.maximumCapacityMotorcycles = maximumCapacityMotorcycles;
     }
 
-    public Integer getCarAvailability() {
+    public Integer getCarsAvailability() {
         return carsAvailability;
     }
 
-    public void setCarAvailability(Integer carAvailability) {
-        this.carsAvailability = carAvailability;
+    public void setCarsAvailability(Integer carsAvailability) {
+        this.carsAvailability = carsAvailability;
     }
 
-    public Integer getMotorcycleAvailability() {
+    public Integer getMotorcyclesAvailability() {
         return motorcyclesAvailability;
     }
 
-    public void setMotorcycleAvailability(Integer motorcycleAvailability) {
-        this.motorcyclesAvailability = motorcycleAvailability;
+    public void setMotorcyclesAvailability(Integer motorcyclesAvailability) {
+        this.motorcyclesAvailability = motorcyclesAvailability;
+    }
+
+    public VehicleEntity getVehicleEntity() {
+        return vehicleEntity;
+    }
+
+    public void setVehicleEntity(VehicleEntity vehicleEntity) {
+        this.vehicleEntity = vehicleEntity;
     }
 }
