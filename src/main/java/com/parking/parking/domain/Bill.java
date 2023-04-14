@@ -1,23 +1,26 @@
 package com.parking.parking.domain;
 
+
+
+
 public class Bill {
 
-    private int billId;
-    private int pay;
+    private Integer billId;
+    private Integer pay;
 
-    public int getBillId() {
+    public Integer getBillId() {
         return billId;
     }
 
-    public void setBillId(int billId) {
+    public void setBillId(Integer billId) {
         this.billId = billId;
     }
 
-    public int getPay() {
+    public Integer getPay() {
         return pay;
     }
 
-    public void setPay(int pay) {
+    public void setPay(Integer pay) {
         this.pay = pay;
     }
 }

@@ -7,18 +7,22 @@ import java.util.List;
 @Table(name = "factura")
 public class BillEntity {
 
-    @EmbeddedId
-    private BillPK id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     @Column(name = "valor_pago")
     private Integer amountToBePaid;
-    @OneToMany(mappedBy = "bill")
-    private List<ParkingEntryEntity> parkingEntry;
 
-    public BillPK getId() {
+    @OneToOne
+    @JoinColumn(name = "id", insertable = false,updatable = false)
+    private VehicleEntity vehicleEntity;
+
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(BillPK id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -29,4 +33,7 @@ public class BillEntity {
     public void setAmountToBePaid(Integer amountToBePaid) {
         this.amountToBePaid = amountToBePaid;
     }
+
+
 }
+

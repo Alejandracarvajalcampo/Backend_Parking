@@ -1,10 +1,15 @@
 package com.parking.parking.domain;
 
+import java.util.Date;
+
 public class Vehicle {
     private int vehicleId;
     private  String plate;
     private String type;
     private String cylinder;
+    private Date arrival;
+    private Date exit;
+
 
     public int getVehicleId() {
         return vehicleId;
@@ -36,5 +41,21 @@ public class Vehicle {
 
     public void setCylinder(String cylinder) {
         this.cylinder = cylinder;
+    }
+
+    public Date getArrival() {
+        return arrival;
+    }
+
+    public void setArrival(Date arrival) {
+        this.arrival = arrival;
+    }
+
+    public Date getExit() {
+        return exit;
+    }
+
+    public void setExit(Date exit) {
+        this.exit = exit;
     }
 }

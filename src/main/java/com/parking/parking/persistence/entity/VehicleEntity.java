@@ -1,7 +1,8 @@
 package com.parking.parking.persistence.entity;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Date;
+
 
 @Entity
 @Table (name = "vehiculo" )
@@ -15,9 +16,11 @@ public class VehicleEntity {
     private String vehicleType;
     @Column(name = "cilindraje")
     private String vehicleCylinder;
+    @Column(name = "hora_ingreso")
+    private Date admissionTime;
+    @Column(name = "hora_salida")
+    private Date departureTime;
 
-    @OneToMany(mappedBy = "vehicle")
-    private List<ParkingEntryEntity> parkingEntry;
 
     public Integer getId() {
         return id;
@@ -27,27 +30,44 @@ public class VehicleEntity {
         this.id = id;
     }
 
-    public String getPlate() {
+    public String getVehiclePlate() {
         return vehiclePlate;
     }
 
-    public void setPlate(String plate) {
-        this.vehiclePlate = plate;
+    public void setVehiclePlate(String vehiclePlate) {
+        this.vehiclePlate = vehiclePlate;
     }
 
-    public String getType() {
+    public String getVehicleType() {
         return vehicleType;
     }
 
-    public void setType(String type) {
-        this.vehicleType = type;
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
-    public String getCylinder() {
+    public String getVehicleCylinder() {
         return vehicleCylinder;
     }
 
-    public void setCylinder(String cylinder) {
-        this.vehicleCylinder = cylinder;
+    public void setVehicleCylinder(String vehicleCylinder) {
+        this.vehicleCylinder = vehicleCylinder;
     }
+
+    public Date getAdmissionTime() {
+        return admissionTime;
+    }
+
+    public void setAdmissionTime(Date admissionTime) {
+        this.admissionTime = admissionTime;
+    }
+
+    public Date getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(Date departureTime) {
+        this.departureTime = departureTime;
+    }
+
 }

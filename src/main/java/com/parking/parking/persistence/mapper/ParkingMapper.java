@@ -1,9 +1,7 @@
 package com.parking.parking.persistence.mapper;
 
 import com.parking.parking.domain.Parking;
-import com.parking.parking.domain.ParkingEntry;
 import com.parking.parking.persistence.entity.ParkingEntity;
-import com.parking.parking.persistence.entity.ParkingEntryEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -21,5 +19,6 @@ public interface ParkingMapper {
     Parking toParking(ParkingEntity parkingEntity);
 
     @InheritInverseConfiguration
+    @Mapping(target = "vehicleEntity", ignore = true)
     ParkingEntity toParkingEntity (Parking parking);
 }

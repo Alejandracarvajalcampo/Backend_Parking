@@ -19,8 +19,8 @@ public class ParkingEntity {
     private Integer motorcyclesAvailability;
 
     // Que columna en la tabla Tuition tiene la FK
-    @JoinColumn(name = "VehicleEntity_id")
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
+    @JoinColumn(name = "id", insertable = false,updatable = false)
     private VehicleEntity vehicleEntity;
 
     public Integer getId() {

@@ -14,12 +14,14 @@ public interface VehicleMapper {
             @Mapping(source = "vehiclePlate",target = "plate"),
             @Mapping(source = "vehicleType",target = "type"),
             @Mapping(source = "vehicleCylinder",target = "cylinder"),
+            @Mapping(source = "admissionTime",target = "arrival"),
+            @Mapping(source = "departureTime",target = "exit"),
 
     })
     Vehicle toVehicle(VehicleEntity vehicleEntity);
 
     @InheritInverseConfiguration
-    @Mapping(target = "parkingEntry", ignore = true)
+
     VehicleEntity toVehicleEntity(Vehicle vehicle);
 
 }

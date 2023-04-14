@@ -17,6 +17,6 @@ public interface BillMapper {
     Bill toBill(BillEntity billEntity);
 
     @InheritInverseConfiguration
-    @Mapping(target = "parkingEntry", ignore = true)
+    @Mapping(target = "id", ignore = true)
     BillEntity toBillEntity(Bill bill);
 }
